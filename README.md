@@ -50,9 +50,7 @@ engine.
 
 
 # License
-Tesseract Studio is released under [Opait Freeware](https://www.opait.com/tesseractstudio/help/license.pdf)
-license which allows any legal use for free. The only limitation is that
-the product cannot be sold for a fee.
+Tesseract Studio is released under [Opait Freeware](LICENSE.md) license which allows any legal use for free. The only limitation is that the product cannot be sold for a fee.
 
 
 # Installation
