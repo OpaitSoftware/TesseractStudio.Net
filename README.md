@@ -73,9 +73,7 @@ the product web site:
 
 
 # Limitations
-The current version only distributed with support for the United States
-locale and the English language. These limitations apply to the language
-of the user interface, OCR and spelling languages. These limitations
+The current version only supports the United States locale and the English language. These limitations
 will be removed in a subsequent release.
 
 
