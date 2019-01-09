@@ -1,7 +1,6 @@
 # Introduction
-A Windows program to create, review and correct OCR data in searchable
-PDF files using the [Tesseract 4.0](https://github.com/tesseract-ocr/)
-engine.
+Tesseract Studio .Net is a Windows program to create, review and correct 
+OCR data in searchable PDF files using the [Tesseract 4.0](https://github.com/tesseract-ocr/) engine.
 
 # Features
 -   Supports image and multipage PDF files, with or without prior OCR
@@ -46,7 +45,14 @@ engine.
 
 -   Supports any number of Undo and Redo operations.
 
--   Save corrections as searchable PDF files.
+-   Save corrections as searchable PDF files. Optionally save as PDF/A 
+    or encrypted PDF files.
+     
+-   Experimental support for removing grid lines and handling a mixed-mode
+    page with both light text on dark background and dark text on light
+	background. This is common with table headers.
+	
+-   Capture and examine debug intermediary images and OCR output in text.
 
 
 # License
@@ -71,12 +77,6 @@ the product web site:
 
 [NHunspell](http://www.crawler-lib.net/nhunspell) Copyright © Maierhofer Software
 
-
-# Limitations
-The current version only distributed with support for the United States
-locale and the English language. These limitations apply to the language
-of the user interface, OCR and spelling languages. These limitations
-will be removed in a subsequent release.
 
 
 # User Guide
@@ -236,10 +236,58 @@ run them in parallel to improve the performance. The performance
 improvement depends on the number of processing cores in the computer.
 
 To run the OCR process, select the "Start OCR..." command from the OCR
-menus, pick a language, specify the pages that you wish to process and
-click the Start button.
+menus, specify the pages that you wish to process and click the Start 
+button.
 
 ![](media/image12.png)
+
+
+## OCR Options
+Various options that control how the OCR is performed can be set from the
+dialog accessible via the Options... button on the OCR dialog.
+
+On the General tab, you can select OCR and spelling languages as well as 
+the number of parallel processes that can be used to accelerate OCR of 
+multi-page documents.
+
+![](media/image13.png)
+
+The selection of the OCR and spelling languages is limited to the languages
+files that have been installed in the computer. You may install or remove
+these language files using the Manage Languages option:
+
+![](media/image14.png)
+
+You may also choose more than one language for processing multi-lingual 
+documents. The spell-checker, however, can only use a single (primary) 
+language.
+
+![](media/image15.png)
+
+Selection of multiple languages will be reflected on the OCR dialog:
+
+![](media/image16.png)
+
+The Image tab displays a few experimental image enhancement options for
+dealing with more complex documents. Depending on the source images, these
+options may or may not affect the accuracy of the OCR data. More options
+will be added to this list in subsequent releases. 
+
+If you check the "Capture debug images" option on the OCR dialog, the 
+intermediate images that result from applying image options to the source
+images will be captured in a PDF file and displayed after OCR is completed.
+This PDF will also include the unformatted OCR text as the last page. This
+is designed for examining the effectiveness of various image enhancement
+choices.
+
+![](media/image17.png)
+
+The Advanced tab uses regular expressions to post process OCR data and make
+certain substitutions based on patterns detected in the OCR data. The two
+included rules try to detect and correct common OCR mistakes with currency
+amounts that are in US format. These expressions are for illustration only.
+
+![](media/image18.png)
 
 
 ## Technical Discussion on Searchable PDF Files
@@ -268,15 +316,26 @@ multi-word phrase with explicit spaces separating words. Most PDF
 viewers will be fine with using explicit space characters to identify
 word boundaries.
 
-## Display Options
-The options dialog allows setting of fonts, colors and borders for
-rendering images and text.
 
-![](media/image13.png)
+## Display Options
+The General tab on the options dialog allows setting of fonts, colors 
+and borders for rendering images and text.
+
+![](media/image19.png)
+
+## PDF Options
+You may use the PDF tab on the options dialog to select parameters that
+will apply to all subsequent OCR operations. The PDF/A option will create
+PDF files that conform to the PDF/A standard for archiving. You may also 
+choose to save PDF files encrypted with a password. You may only use one
+of these options as PDF/A does not allow encryption.
+
+![](media/image20.png)
+
 
 <br/><br/>
 
-![](media/image14.png)
+![](media/image21.png)
 
 
 # More from Opait Software
