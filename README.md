@@ -1,6 +1,6 @@
 # Introduction
 Tesseract Studio .Net is a Windows program to create, review and correct 
-OCR data in searchable PDF files using the [Tesseract 4.0](https://github.com/tesseract-ocr/) engine.
+OCR data in searchable PDF files using [Tesseract 4.0](https://github.com/tesseract-ocr/) engine.
 
 # Features
 -   Supports image and multipage PDF files, with or without prior OCR
@@ -264,7 +264,8 @@ language.
 
 ![](media/image15.png)
 
-Selection of multiple languages will be reflected on the OCR dialog:
+Selection of multiple languages will be reflected on the OCR dialog 
+(e.g. deu+eng for documents that have both German and English text):
 
 ![](media/image16.png)
 
