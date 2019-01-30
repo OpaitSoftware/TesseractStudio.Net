@@ -246,6 +246,8 @@ button.
 Various options that control how the OCR is performed can be set from the
 dialog accessible via the Options... button on the OCR dialog.
 
+### General Tab
+
 On the General tab, you can select OCR and spelling languages as well as 
 the number of parallel processes that can be used to accelerate OCR of 
 multi-page documents.
@@ -269,6 +271,8 @@ Selection of multiple languages will be reflected on the OCR dialog
 
 ![](media/image16.png)
 
+### Image Tab
+
 The Image tab displays a few experimental image enhancement options for
 dealing with more complex documents. Depending on the source images, these
 options may or may not affect the accuracy of the OCR data. More options
@@ -283,12 +287,54 @@ choices.
 
 ![](media/image17.png)
 
+### OCR Tab
+The OCR tab controls how the pages are processed through the OCR engine and
+has options in saving the processed files in the PDF format. 
+
+![](media/image18.png)
+
+The type of the OCR performed depends on the source document format:
+
+- **Image only** applies to PDF source documents that may have both image 
+and text components. This option will preserve the existing text and OCR
+only image components embedded in the source PDF. 
+
+- **Full page** will igone existing text components in PDF files and 
+apply OCR to a fully rasterized image of the PDF source document. For image
+source documents, this is the only option. Even for a PDF document with both 
+text and images, you may want to perform a full OCR depending on the 
+application. For instance, there might be invisible text on the PDF page 
+that will be eliminated by this method. Full page is often slower than the
+images only option for vector PDF files.
+
+The save format of OCR output is always a PDF page. The type of the page
+can be selected using one of the options below:
+
+- **Vector PDF** is only available for PDF source files that are processed
+using the images only OCR option. The full fidelity of the source PDF is
+retained and existing text is merged with hidden OCR text.
+
+- **Searchable image PDF** is a rasterized PDF page with the text hidden
+behind the image. This option enables you to control the size of the file
+by selection the image resolution and color depth.
+
+- **Text only PDF** uses a visible font to display the recognized text
+on a PDF page. The text is formatted and placed in roughly its original 
+location to preserve the page layout. This option will produce the smallest
+output file by dropping all graphical components from the source file.
+
+The fonts available to save text only PDF files depends on whether you 
+select to embed the font into the target PDF file. If font is not embedded,
+then you only use the standard type 1 fonts that are supported by all PDF
+readers. Embedded fonts will make the size of the PDF larger.
+
+### Advanced Tab
 The Advanced tab uses regular expressions to post process OCR data and make
 certain substitutions based on patterns detected in the OCR data. The two
 included rules try to detect and correct common OCR mistakes with currency
 amounts that are in US format. These expressions are for illustration only.
 
-![](media/image18.png)
+![](media/image19.png)
 
 
 ## Technical Discussion on Searchable PDF Files
@@ -322,7 +368,7 @@ word boundaries.
 The General tab on the options dialog allows setting of fonts, colors 
 and borders for rendering images and text.
 
-![](media/image19.png)
+![](media/image20.png)
 
 ## PDF Options
 You may use the PDF tab on the options dialog to select parameters that
@@ -331,12 +377,12 @@ PDF files that conform to the PDF/A standard for archiving. You may also
 choose to save PDF files encrypted with a password. You may only use one
 of these options as PDF/A does not allow encryption.
 
-![](media/image20.png)
+![](media/image21.png)
 
 
 <br/><br/>
 
-![](media/image21.png)
+![](media/image22.png)
 
 
 # More from Opait Software
